@@ -1,0 +1,9 @@
+node_modules
+extension
+coverage
+
+.vscode
+yarn.lock
+yarn-error.log
+.DS_Store
+src/extension/.DS_Store

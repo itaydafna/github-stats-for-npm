@@ -1,0 +1,94 @@
+{
+  "name": "github-stats-for-npm",
+  "version": "1.0.0",
+  "main": "index.js",
+  "description": "A Chrome extension that adds a dialog with github stats to the package's npmjs page",
+  "scripts": {
+    "serve": "nodemon ./server/index.js",
+    "dev": "NODE_ENV=development webpack-dev-server",
+    "build": "NODE_ENV=production  webpack",
+    "dist": "NODE_ENV=production webpack && node ./build-utils/zip-dist.js",
+    "lint": "eslint --ext .js,.vue --ignore-path .gitignore",
+    "lint-autofix": "yarn lint --fix",
+    "eslint-check": "eslint --print-config .eslintrc.js | eslint-config-prettier-check",
+    "precommit": "yarn eslint-check && yarn lint",
+    "test": "jest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/itaydafna/github-stats-for-npm"
+  },
+  "keywords": [
+    "github",
+    "npm",
+    "stats",
+    "stars"
+  ],
+  "author": "Itay Dafna",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/itaydafna/github-stats-for-npm/issues"
+  },
+  "homepage": "https://github.com/itaydafna/github-stats-for-npm#readme",
+  "devDependencies": {
+    "@vue/test-utils": "^1.0.0-beta.25",
+    "axios": "^0.18.0",
+    "babel": "^6.23.0",
+    "babel-core": "^6.26.3",
+    "babel-eslint": "^8.2.6",
+    "babel-jest": "^23.4.2",
+    "babel-loader": "^7.1.5",
+    "babel-plugin-transform-object-rest-spread": "^6.26.0",
+    "babel-plugin-transform-runtime": "^6.23.0",
+    "babel-preset-env": "^1.7.0",
+    "babel-preset-es2015": "^6.24.1",
+    "babel-preset-stage-0": "^6.24.1",
+    "copy-webpack-plugin": "^4.5.2",
+    "css-loader": "^1.0.0",
+    "eslint": "^5.4.0",
+    "eslint-config-prettier": "^3.0.1",
+    "eslint-plugin-prettier": "^2.6.2",
+    "eslint-plugin-vue": "^4.7.1",
+    "express": "^4.16.3",
+    "html-webpack-plugin": "^3.2.0",
+    "husky": "^1.1.0",
+    "jest": "^23.5.0",
+    "jest-vue-preprocessor": "^1.4.0",
+    "moxios": "^0.4.0",
+    "node-sass": "^4.9.3",
+    "prettier": "^1.14.2",
+    "sass-loader": "^7.1.0",
+    "style-loader": "^0.22.1",
+    "supertest": "^3.3.0",
+    "vue": "^2.5.17",
+    "vue-loader": "^15.4.0",
+    "vue-octicon": "^2.1.1",
+    "vue-style-loader": "^4.1.2",
+    "vue-template-compiler": "^2.5.17",
+    "vue-template-es2015-compiler": "1.6.x",
+    "webpack": "^4.16.5",
+    "webpack-chrome-extension-reloader": "^0.8.3",
+    "webpack-cli": "^3.1.0",
+    "webpack-dev-server": "^3.1.9",
+    "write-file-webpack-plugin": "^4.4.1",
+    "zip-folder": "^1.0.0"
+  },
+  "jest": {
+    "moduleNameMapper": {
+      "^vue$": "vue/dist/vue.common.js"
+    },
+    "moduleFileExtensions": [
+      "js",
+      "vue",
+      "json"
+    ],
+    "transform": {
+      "^.+\\.js$": "<rootDir>/node_modules/babel-jest",
+      ".*\\.(vue)$": "<rootDir>/node_modules/jest-vue-preprocessor"
+    },
+    "transformIgnorePatterns": [
+      "/node_modules(?![\\/]vue-octicon[\\/])/"
+    ],
+    "collectCoverage": true
+  }
+}
