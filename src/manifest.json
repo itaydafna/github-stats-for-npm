@@ -1,6 +1,6 @@
 {
 	"name": "Github stats for NPM",
-	"version": "0.0.0.3",
+	"version": "0.0.0.4",
 	"description": "A Chrome extension that adds a dialog with github stats to the package's npmjs page",
 	"author": "itaydafna",
 	"manifest_version": 2,
