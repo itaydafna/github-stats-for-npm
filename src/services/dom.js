@@ -15,9 +15,9 @@ export function pollDOM({ intervalId, interval, callback }) {
 
 export function selectRepoBox() {
   try {
-    return [
-      ...document.querySelectorAll(`div[class^='package__sidebarSection']`),
-    ].find(elm => elm.children[0].childNodes[0].data === 'repository');
+    return [...document.querySelectorAll(`div[class^='_2_OuR']`)].find(
+      elm => elm.children[0].childNodes[0].data === 'repository'
+    );
   } catch (e) {
     return null;
   }
